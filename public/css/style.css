@@ -202,6 +202,8 @@ img{display:block;max-width:100%}
 .footer a{display:block;font-size:.68rem;margin-top:6px;color:#d4dde6}
 .newsletter input{width:100%;padding:9px;border:0;margin:9px 0 6px}
 .footer-bottom{margin-top:28px;border-top:1px solid #1a3550;padding:13px 0;font-size:.62rem;display:flex;justify-content:space-between}
+.footer-bottom a{display:inline;margin-top:0;color:#d4dde6}
+.footer-bottom a:hover{color:white;text-decoration:underline}
 
 .page-hero{background:var(--navy);color:white;padding:70px 0}
 .page-hero h1{font-size:3rem;margin:0}.page-hero p{max-width:760px;color:#d5e0e9}
