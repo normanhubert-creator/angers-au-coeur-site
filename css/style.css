@@ -149,6 +149,8 @@ section[id]{scroll-margin-top:96px}
              linear-gradient(135deg,#668ca5,#183d5e);
 }
 .video-box[data-video-id]{cursor:pointer}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.video-grid .video-box{min-height:220px}
 .play{width:55px;height:55px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--navy);display:grid;place-items:center;font-size:1.1rem}
 .video-caption{position:absolute;left:14px;right:14px;bottom:12px;font-size:.76rem;font-weight:800}
 .video-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:7px}

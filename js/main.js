@@ -3,11 +3,14 @@ const menuBtn = document.querySelector('[data-menu]');
 const nav = document.querySelector('[data-nav]');
 if(menuBtn && nav) menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
 
-// Vidéo à la une : chargée seulement au clic (pas d'iframe au chargement de la page).
-const videoBox=document.querySelector('.video-box[data-video-id]');
-if(videoBox){
+// Vidéo(s) à la une : vignette = première image réelle de la vidéo (miniature Drive), lecteur
+// chargé seulement au clic (pas d'iframe ni de vidéo au chargement de la page).
+document.querySelectorAll('.video-box[data-video-id]').forEach(videoBox=>{
+  const id=videoBox.getAttribute('data-video-id');
+  videoBox.style.backgroundImage='linear-gradient(0deg,rgba(4,18,34,.72),rgba(4,18,34,.08)), url(https://drive.google.com/thumbnail?id='+id+'&sz=w1000)';
+  videoBox.style.backgroundSize='cover';
+  videoBox.style.backgroundPosition='center';
   videoBox.addEventListener('click',()=>{
-    const id=videoBox.getAttribute('data-video-id');
     const iframe=document.createElement('iframe');
     iframe.src='https://drive.google.com/file/d/'+id+'/preview';
     iframe.setAttribute('allow','autoplay; fullscreen');
@@ -16,7 +19,7 @@ if(videoBox){
     iframe.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0';
     videoBox.replaceChildren(iframe);
   },{once:true});
-}
+});
 
 const demoIdeas = [
   {
