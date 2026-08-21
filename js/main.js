@@ -3,6 +3,21 @@ const menuBtn = document.querySelector('[data-menu]');
 const nav = document.querySelector('[data-nav]');
 if(menuBtn && nav) menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
 
+// Vidéo à la une : chargée seulement au clic (pas d'iframe au chargement de la page).
+const videoBox=document.querySelector('.video-box[data-video-id]');
+if(videoBox){
+  videoBox.addEventListener('click',()=>{
+    const id=videoBox.getAttribute('data-video-id');
+    const iframe=document.createElement('iframe');
+    iframe.src='https://drive.google.com/file/d/'+id+'/preview';
+    iframe.setAttribute('allow','autoplay; fullscreen');
+    iframe.allowFullscreen=true;
+    iframe.loading='lazy';
+    iframe.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0';
+    videoBox.replaceChildren(iframe);
+  },{once:true});
+}
+
 const demoIdeas = [
   {
     status:"En cours d'étude",
