@@ -70,8 +70,34 @@ renderIdea();
 rebuildDots();
 // Idées réelles publiées par le Vice-Président depuis l'espace adhérent, si disponibles — sinon
 // les exemples de démonstration ci-dessus restent affichés (comportement inchangé par défaut).
+// Pôles réels dans l'ordre exact des data-pole-panel="1"..."10" sur travaux.html — sert à retrouver
+// dans quel panneau afficher les idées d'un pôle donné, publiées depuis l'espace adhérent.
+const POLE_PANEL_NAMES=['Institutions et démocratie','Justice, sécurité et libertés','Finances publiques','Économie, travail et entreprises','Éducation, jeunesse et culture','Santé et protection sociale','Logement, mobilités et territoires','Écologie, énergie et agriculture','Science, numérique et IA','Europe, défense et souverainetés'];
+function applyPoleIdeas(items){
+  const panels=document.querySelectorAll('[data-pole-panel]');
+  if(!panels.length||!items||!items.length)return;
+  const byPanel={};
+  items.forEach(item=>{
+    const idx=POLE_PANEL_NAMES.indexOf(item.pole_nom);
+    if(idx<0)return;
+    const num=String(idx+1);
+    (byPanel[num]=byPanel[num]||[]).push(item);
+  });
+  panels.forEach(panel=>{
+    const list=byPanel[panel.getAttribute('data-pole-panel')];
+    if(!list||!list.length)return;
+    const ul=panel.querySelector('.pole-list');
+    if(!ul)return;
+    ul.replaceChildren(...list.map(item=>{
+      const li=document.createElement('li');
+      li.textContent=item.titre||'';
+      return li;
+    }));
+  });
+}
 fetch('data/public-ideas.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(data=>{
   if(!data||!Array.isArray(data.items)||!data.items.length)return;
+  applyPoleIdeas(data.items);
   ideas=data.items.map(item=>({
     status:item.pole_nom||'',
     title:item.titre||'',
