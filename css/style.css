@@ -195,6 +195,10 @@ section[id]{scroll-margin-top:96px}
 .footer p{font-size:.68rem;color:#aebccb;margin-top:12px}
 .footer strong{font-size:.74rem;color:white;text-transform:uppercase}
 .footer a{display:block;font-size:.68rem;margin-top:6px;color:#d4dde6}
+.social-icons{display:flex;gap:10px;margin-top:10px}
+.social-icons a{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;margin-top:0;border:1px solid #1a3550;border-radius:50%;color:#d4dde6}
+.social-icons a:hover{color:white;border-color:#d4dde6}
+.social-icons svg{width:16px;height:16px}
 .newsletter input{width:100%;padding:9px;border:0;margin:9px 0 6px}
 .footer-bottom{margin-top:28px;border-top:1px solid #1a3550;padding:13px 0;font-size:.62rem;display:flex;justify-content:space-between}
 .footer-bottom a{display:inline;margin-top:0;color:#d4dde6}
