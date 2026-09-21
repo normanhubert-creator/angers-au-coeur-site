@@ -216,6 +216,7 @@ section[id]{scroll-margin-top:96px}
 .page-hero.photo .hero-credit a{color:inherit;text-decoration:underline}
 .page-section{padding:65px 0}
 .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .card{border:1px solid var(--line);padding:24px;background:white}.card h3{margin-top:0}.card p{color:var(--muted)}
 .value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;max-width:920px;margin:0 auto}
 
@@ -330,6 +331,7 @@ textarea{min-height:130px}
   .footer-grid{grid-template-columns:1fr 1fr 1fr}
   .pipeline-stages{grid-template-columns:1fr 1fr}
   .pole-tabs{grid-template-columns:repeat(3,1fr)}
+  .cards4{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:760px){
   .container{width:min(calc(100% - 26px),var(--max))}
@@ -342,7 +344,7 @@ textarea{min-height:130px}
   .dashboard{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
   .footer-bottom{flex-direction:column;gap:5px}
-  .cards3,.form-grid{grid-template-columns:1fr}.field-full{grid-column:auto}
+  .cards3,.cards4,.form-grid{grid-template-columns:1fr}.field-full{grid-column:auto}
   .value-grid{grid-template-columns:1fr;gap:26px}
   .org-grid{grid-template-columns:1fr}
   .poles-intro,.expertise-layout{grid-template-columns:1fr}
