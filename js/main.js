@@ -1,7 +1,13 @@
 
 const menuBtn = document.querySelector('[data-menu]');
 const nav = document.querySelector('[data-nav]');
-if(menuBtn && nav) menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+if(menuBtn && nav){
+  nav.id='navigation-principale';
+  menuBtn.setAttribute('aria-controls',nav.id);
+  menuBtn.setAttribute('aria-expanded','false');
+  menuBtn.addEventListener('click',()=>menuBtn.setAttribute('aria-expanded',String(nav.classList.toggle('open'))));
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'){nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}});
+}
 
 // Miniatures Drive ou YouTube ; aucun lecteur n'est chargé avant l'action du visiteur.
 document.querySelectorAll('.video-box[data-video-id], .video-box[data-youtube-id]').forEach(videoBox=>{
@@ -44,57 +50,7 @@ document.querySelectorAll('.video-box[data-video-id], .video-box[data-youtube-id
   });
 });
 
-const demoIdeas = [
-  {
-    status:"En cours d'étude",
-    title:"Simplifier certaines démarches administratives locales",
-    text:"Une contribution pourrait proposer d'alléger certaines formalités pour les habitants et les petites entreprises.",
-    meta:"Exemple de démonstration · contribution non officielle"
-  },
-  {
-    status:"À qualifier",
-    title:"Mieux relier les horaires de transport et d'emploi",
-    text:"Une contribution pourrait documenter les difficultés rencontrées par les salariés en horaires décalés.",
-    meta:"Exemple de démonstration · contribution non officielle"
-  },
-  {
-    status:"En analyse",
-    title:"Mieux expliquer le fonctionnement des institutions",
-    text:"Une contribution pourrait suggérer de nouveaux formats pédagogiques simples et accessibles.",
-    meta:"Exemple de démonstration · contribution non officielle"
-  }
-];
-let ideas=demoIdeas;
-let ideaIndex=0;
-function rebuildDots(){
-  const wrap=document.querySelector('.idea-controls .dots');
-  if(!wrap)return;
-  wrap.replaceChildren();
-  ideas.forEach((_,i)=>{
-    const dot=document.createElement('button');
-    dot.className='dot'+(i===0?' active':'');
-    dot.addEventListener('click',()=>{ideaIndex=i;renderIdea();});
-    wrap.append(dot);
-  });
-}
-function renderIdea(){
-  const card=document.querySelector('[data-idea-card]');
-  if(!card||!ideas.length)return;
-  const x=ideas[ideaIndex];
-  card.querySelector('[data-status]').textContent=x.status||'';
-  card.querySelector('[data-title]').textContent=x.title||'';
-  card.querySelector('[data-text]').textContent=x.text||'';
-  card.querySelector('[data-meta]').textContent=x.meta||'';
-  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===ideaIndex));
-}
-document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>{ideaIndex=(ideaIndex+1)%ideas.length;renderIdea()}));
-document.querySelectorAll('[data-prev]').forEach(b=>b.addEventListener('click',()=>{ideaIndex=(ideaIndex-1+ideas.length)%ideas.length;renderIdea()}));
-renderIdea();
-rebuildDots();
-// Idées réelles publiées par le Vice-Président depuis l'espace adhérent, si disponibles — sinon
-// les exemples de démonstration ci-dessus restent affichés (comportement inchangé par défaut).
-// Pôles réels dans l'ordre exact des data-pole-panel="1"..."10" sur travaux.html — sert à retrouver
-// dans quel panneau afficher les idées d'un pôle donné, publiées depuis l'espace adhérent.
+// Ce fichier public ne contient que des éléments sélectionnés pour publication.
 const POLE_PANEL_NAMES=['Institutions et démocratie','Justice, sécurité et libertés','Finances publiques','Économie, travail et entreprises','Éducation, jeunesse et culture','Santé et protection sociale','Logement, mobilités et territoires','Écologie, énergie et agriculture','Science, numérique et IA','Europe, défense et souverainetés'];
 function applyPoleIdeas(items){
   const panels=document.querySelectorAll('[data-pole-panel]');
@@ -121,23 +77,8 @@ function applyPoleIdeas(items){
 fetch('data/public-ideas.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(data=>{
   if(!data||!Array.isArray(data.items)||!data.items.length)return;
   applyPoleIdeas(data.items);
-  ideas=data.items.map(item=>({
-    status:item.pole_nom||'',
-    title:item.titre||'',
-    text:item.extrait||'',
-    meta:item.date?('Idée du pôle « '+(item.pole_nom||'')+' » · '+item.date):('Idée du pôle « '+(item.pole_nom||'')+' »')
-  }));
-  ideaIndex=0;
-  var note=document.querySelector('.idea-note');
-  if(note)note.textContent='Idées publiées par le mouvement, sélectionnées par le Vice-Président.';
-  renderIdea();
-  rebuildDots();
 }).catch(()=>{});
 
-document.querySelectorAll('[data-demo]').forEach(el=>el.addEventListener('click',e=>{
-  e.preventDefault();
-  alert("Fonction prévue mais non connectée dans cette maquette.");
-}));
 
 const poleTabs=document.querySelectorAll('[data-pole-tab]');
 const polePanels=document.querySelectorAll('[data-pole-panel]');
