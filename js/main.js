@@ -9,6 +9,32 @@ if(menuBtn && nav){
   document.addEventListener('keydown',event=>{if(event.key==='Escape'){nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}});
 }
 
+// Diaporama manuel : aucun défilement automatique, navigation au clavier possible.
+document.querySelectorAll('[data-hero-gallery]').forEach(gallery=>{
+  const slides=[...gallery.querySelectorAll('[data-hero-slide]')];
+  const dots=[...gallery.querySelectorAll('[data-hero-go]')];
+  const status=gallery.querySelector('[data-hero-status]');
+  if(slides.length<2)return;
+  let selected=0;
+  const show=index=>{
+    selected=(index+slides.length)%slides.length;
+    slides.forEach((slide,n)=>{slide.hidden=n!==selected;});
+    dots.forEach((dot,n)=>dot.setAttribute('aria-current',String(n===selected)));
+    if(status)status.textContent='Photo '+(selected+1)+' sur '+slides.length;
+  };
+  gallery.querySelector('[data-hero-prev]')?.addEventListener('click',()=>show(selected-1));
+  gallery.querySelector('[data-hero-next]')?.addEventListener('click',()=>show(selected+1));
+  dots.forEach((dot,n)=>dot.addEventListener('click',()=>show(n)));
+  gallery.addEventListener('keydown',event=>{
+    if(event.target.tagName!=='BUTTON')return;
+    if(event.key==='ArrowLeft'||event.key==='ArrowRight'){
+      event.preventDefault();show(selected+(event.key==='ArrowRight'?1:-1));
+    }
+  });
+  const controls=gallery.querySelector('[data-hero-controls]');
+  if(controls)controls.hidden=false;
+});
+
 // Miniatures Drive ou YouTube ; aucun lecteur n'est chargé avant l'action du visiteur.
 document.querySelectorAll('.video-box[data-video-id], .video-box[data-youtube-id]').forEach(videoBox=>{
   const youtubeId=videoBox.getAttribute('data-youtube-id');

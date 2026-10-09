@@ -42,3 +42,65 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 @media(max-width:1100px){.dashboard{grid-template-columns:1fr 1fr}.dashboard .panel:last-child{grid-column:1/-1}.team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.dashboard{grid-template-columns:1fr}.dashboard .panel:last-child{grid-column:auto}.next-meeting-inner,.participation-block{flex-direction:column;align-items:flex-start}.team-grid{gap:14px}.team-card>div{padding:12px}.team-card h3{font-size:.95rem}.team-card p{font-size:.9rem}.hero h1{font-size:2.9rem}.page-hero h1{font-size:2rem}.cta-buttons{flex-wrap:wrap}.dashboard .home-news-link{grid-template-columns:95px 1fr}.revue-feature,.home-revue .revue-feature{grid-template-columns:1fr;gap:28px}.revue-cover{max-width:300px;margin:auto}.revue-feature h2{font-size:1.6rem}.logo-wrap{min-width:auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Une action verte pour les idées, distincte de l'adhésion rouge. */
+.btn-green,.nav a.nav-idea{background:#236742;color:white;border-color:#236742}
+.btn-green:hover,.nav a.nav-idea:hover,.nav a.nav-idea.active{background:#174e31;color:white;border-color:#174e31}
+.nav{gap:14px}.nav a.nav-idea{padding:12px 11px;border-radius:3px;white-space:nowrap}
+.nav a.nav-idea:after{display:none}.header-idea,.idea-short{display:none}
+.nav a,.header-actions .btn{white-space:nowrap}
+@media(min-width:1181px) and (max-width:1259px){.nav{display:none;position:absolute;top:82px;left:0;right:0;background:white;padding:20px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.nav.open{display:flex}.nav a{padding:7px 0}.nav a:after{display:none}.nav .nav-member{display:block}.menu-btn{display:block}.header-actions{margin-left:auto}.header-idea{display:inline-flex}}
+
+/* Texte stable à gauche, photographies parcourues seulement à la demande. */
+.home-hero{background:var(--navy-deep);min-height:0;padding:36px 0}
+.hero-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:48px;align-items:center}
+.home-hero .hero-content{padding:18px 0;max-width:none}
+.home-hero h1{font-size:clamp(2.7rem,4.8vw,4.9rem);line-height:1.05}
+.home-hero p{line-height:1.65}.hero-kicker{display:block;font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:18px;color:#dbe8f3;font-weight:750}
+.hero-gallery{overflow:hidden;background:white;border-radius:8px;box-shadow:0 12px 32px #0004}
+.hero-slides figure{margin:0}.hero-slides figure[hidden],.hero-gallery-controls[hidden]{display:none}
+.hero-slides img{display:block;width:100%;height:auto;aspect-ratio:1.5;object-fit:cover}
+.hero-slides figcaption{padding:14px 20px;min-height:78px;line-height:1.5;color:var(--navy);font-weight:700;font-size:.95rem}
+.hero-slides figcaption small{display:block;font-size:.72rem;font-weight:400;color:#45556a;margin-top:3px}
+.hero-slides figcaption a{color:inherit;text-decoration:underline}
+.hero-gallery-controls{display:flex;align-items:center;justify-content:center;gap:12px;padding:10px 16px;background:#eef3f8;color:var(--navy)}
+.hero-gallery-controls button{border:1px solid #c3cfdb;border-radius:4px;background:white;color:var(--navy);min-width:44px;min-height:44px;font-size:1.3rem;cursor:pointer}
+.hero-gallery-controls button:hover{background:#dae6ee}
+.hero-gallery-dots{display:flex;gap:2px}.hero-gallery-dots button{position:relative;min-width:32px;min-height:40px;border:0;background:transparent}
+.hero-gallery-dots button:before{content:"";position:absolute;inset:0;width:9px;height:9px;margin:auto;border-radius:50%;background:#8a9caf}
+.hero-gallery-dots button[aria-current="true"]:before{background:#236742;outline:2px solid #236742;outline-offset:3px}
+[data-hero-status]{font-size:.75rem;white-space:nowrap}
+
+/* Des repères plus courts visuellement, sans enlever les textes validés. */
+.home-principles{padding:32px 0 38px}.home-principles .section-title{text-align:left;margin-bottom:20px}
+.home-principles .section-title .rule{margin-left:0;background:#236742}
+.home-principles .values{gap:16px;max-width:none}.home-principles .value{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:14px;text-align:left;background:#f0f5f3;border:1px solid #d6e3dc;border-top:3px solid #236742;border-radius:6px;padding:22px 18px}
+.home-principles .value-icon{width:44px;height:44px;margin:0;grid-row:1/3;border-width:1px}
+.home-principles .value h3{align-self:end}.home-principles .value p{line-height:1.6}
+
+/* La spécificité rejoint directement la présentation du mouvement. */
+.movement-intro-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.85fr);gap:64px;max-width:1240px;align-items:start}
+.movement-intro-copy h2{color:var(--navy);font-size:2rem;line-height:1.2;margin:10px 0 22px}
+.movement-intro-copy p{font-size:1.05rem;line-height:1.75;color:#35465a}
+.movement-intro-copy .independence-summary{font-size:.94rem;border-left:3px solid #236742;padding-left:18px}
+.movement-principles{background:#f5f8fb;border:1px solid var(--line);border-radius:8px;padding:26px}
+.movement-principles h2{font-size:1.45rem;line-height:1.3;color:var(--navy);margin:10px 0 24px}
+.movement-principles .value-grid{grid-template-columns:1fr;gap:20px}
+.movement-principles .value{display:grid;grid-template-columns:48px minmax(0,1fr);column-gap:16px;text-align:left;padding:0}
+.movement-principles .value-icon{width:48px;height:48px;margin:0;grid-row:1/3}
+.movement-principles .value h3{align-self:end}.movement-principles .value p{line-height:1.6}
+.movement-position-note{border-top:1px solid var(--line);padding-top:18px;margin:22px 0 0;color:#45556a;font-size:.82rem;line-height:1.6}
+
+.terrain-story{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:52px;align-items:center;max-width:1240px}
+.terrain-story figure{margin:0}.terrain-story img{display:block;width:100%;height:auto;border-radius:8px}
+.terrain-story figcaption{font-size:.8rem;color:#45556a;line-height:1.5;margin-top:10px}
+.terrain-story h2{font-size:2rem;line-height:1.2;color:var(--navy);margin:10px 0 22px}
+.terrain-story p{color:#35465a;line-height:1.75}.terrain-story .editorial-actions{justify-content:flex-start;margin-top:24px}
+.page-hero.photo-community{background-image:linear-gradient(90deg,rgba(4,18,34,.95),rgba(4,18,34,.7) 55%,rgba(4,18,34,.25)),url(../images/rencontres/2026-09-19-mail-groupe.jpg)}
+.page-hero.photo-dialogue{background-image:linear-gradient(90deg,rgba(4,18,34,.95),rgba(4,18,34,.7) 55%,rgba(4,18,34,.25)),url(../images/rencontres/2026-09-19-mail-dialogue.jpg)}
+.page-hero.photo-echanges{background-image:linear-gradient(90deg,rgba(4,18,34,.95),rgba(4,18,34,.7) 55%,rgba(4,18,34,.25)),url(../images/rencontres/2026-09-19-mail-echanges.jpg)}
+.page-hero.photo .hero-credit{color:white;background:rgba(4,18,34,.8);padding:3px 7px;border-radius:3px;max-width:calc(100% - 28px)}
+
+@media(max-width:1180px){.header-idea{display:inline-flex}.nav a.nav-idea{padding:12px}.hero-layout{gap:28px}.home-principles .values{grid-template-columns:repeat(2,minmax(0,1fr))}.movement-intro-grid{gap:32px}}
+@media(max-width:900px){.hero-layout{grid-template-columns:1fr}.home-hero .hero-content{max-width:760px}.hero-gallery{width:100%;max-width:760px;margin:auto}.hero-slides img{max-height:450px}.movement-intro-grid,.terrain-story{grid-template-columns:1fr}.movement-principles .value-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.movement-principles .value{display:block}.movement-principles .value-icon{margin:0 0 14px}}
+@media(max-width:760px){.idea-long{display:none}.idea-short{display:inline}.home-hero{padding:24px 0}.home-hero .hero-content{padding:12px 0}.home-hero h1{font-size:2.9rem}.hero-actions{gap:10px}.hero-actions .btn{padding:0 12px}.hero-slides figcaption{min-height:94px;padding:14px}.hero-gallery-controls{gap:8px;padding:10px}.home-principles .value{display:block;padding:18px 14px}.home-principles .value-icon{margin-bottom:12px}.movement-principles{padding:22px}.movement-principles .value-grid{grid-template-columns:1fr}.movement-principles .value{display:grid}.movement-principles .value-icon{margin:0}.movement-intro-copy h2,.terrain-story h2{font-size:1.6rem}.page-hero.photo h1{font-size:2rem}.page-hero.photo .hero-credit{font-size:.6rem}}

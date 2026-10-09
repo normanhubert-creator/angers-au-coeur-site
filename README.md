@@ -15,6 +15,8 @@ La version web conserve la maquette, l’édito et les développements de la rev
 
 Trois photographies de la rencontre du 19 septembre au Jardin du Mail, fournies dans le dossier Photos AAC, sont publiées avec confirmation des autorisations. Les pixels ne sont pas retouchés ; les métadonnées EXIF/XMP/IPTC/commentaires sont retirées des copies publiques. Les originaux sont conservés.
 
+L’accueil associe désormais un texte fixe à un diaporama manuel de trois photographies, sans défilement automatique. Les actions sont distinctes : adhésion rouge, proposition d’idée verte, actualités. Les repères sont présentés en cartes compactes et une section photographique met en avant les échanges de terrain. Dans la présentation du mouvement, les trois exigences rejoignent l’introduction ; l’indépendance y est expliquée sans bloc supplémentaire. Les bandeaux des principales pages de contenu réutilisent les photos autorisées, tandis que les pages légales gardent une présentation sobre. Les portraits restent limités à 180 pixels, avec les prénoms et fonctions uniquement.
+
 ## Confidentialité et périmètre
 
 Le dépôt ne contient pas le backend, les bases, les contributions privées, les comptes, les mots de passe ou les secrets. Les portraits et fonctions ont été autorisés par le responsable du site.

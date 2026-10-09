@@ -19,7 +19,7 @@
 <meta name="twitter:description" content="Découvrez Angers au Cœur, mouvement politique indépendant ancré à Angers, sa méthode de travail et ses principes de participation et de responsabilité.">
 <meta name="twitter:image" content="https://www.angersaucoeur.org/images/logo-angers-au-coeur.png">
 <link rel="stylesheet" href="css/style.css?v=20261009-editorial">
-<link rel="stylesheet" href="css/editorial.css?v=20261009-photos-prenoms">
+<link rel="stylesheet" href="css/editorial.css?v=20261009-visuel">
 </head>
 <body>
 <header class="site-header">
@@ -34,10 +34,11 @@
       <a href="actualites.html">Actualités</a>
       <a href="revue.html">La revue</a>
       <a href="contact.html">Nous rejoindre</a>
-      <a href="proposer-une-idee.html">Proposer une idée</a>
+      <a href="proposer-une-idee.html" class="nav-idea">Proposer une idée</a>
       <a class="nav-member" href="https://angers-au-coeur-espace.angers-au-coeur-cloudflare-v2.workers.dev/#/login">Espace adhérent</a>
     </nav>
     <div class="header-actions">
+      <a class="btn btn-green header-idea" href="proposer-une-idee.html" aria-label="Proposer une idée"><span class="idea-long">Proposer une idée</span><span class="idea-short" aria-hidden="true">Une idée ?</span></a>
       <a class="btn btn-outline" href="https://angers-au-coeur-espace.angers-au-coeur-cloudflare-v2.workers.dev/#/login">Espace adhérent</a>
       <a class="btn btn-red" href="https://www.helloasso.com/beta/associations/angers-au-coeur/adhesions/adhesion-angers-au-coeur" target="_blank" rel="noopener noreferrer">Adhérer</a>
     </div>
@@ -54,18 +55,21 @@
   <div class="hero-credit">La Doutre et Saint-Jacques, Angers — Kev22, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a>, Wikimedia Commons</div>
 </section>
 
-<section class="page-section" style="padding-bottom:0">
-  <div class="container">
-    <p style="max-width:820px;font-size:1.05rem;color:#2b3c4e;margin:0 0 14px">Angers au Cœur est un mouvement politique indépendant, ancré dans son territoire et ouvert à la participation de celles et ceux qui souhaitent comprendre les enjeux publics, contribuer à la réflexion collective et faire émerger des propositions sérieuses.</p>
-    <p style="max-width:820px;font-size:1.05rem;color:#2b3c4e;margin:0">Notre conviction est simple : la politique ne doit pas exister seulement pendant les campagnes électorales. Elle doit aussi se construire entre les scrutins, à partir des problèmes vécus, des besoins du terrain, des connaissances disponibles et du débat collectif.</p>
+<section class="page-section movement-intro"><div class="container movement-intro-grid">
+  <div class="movement-intro-copy"><span class="kicker">Le mouvement</span><h2>Comprendre les enjeux, construire ensemble</h2>
+    <p>Angers au Cœur est un mouvement politique indépendant, ancré dans son territoire et ouvert à la participation de celles et ceux qui souhaitent comprendre les enjeux publics, contribuer à la réflexion collective et faire émerger des propositions sérieuses.</p>
+    <p>Notre conviction est simple : la politique ne doit pas exister seulement pendant les campagnes électorales. Elle doit aussi se construire entre les scrutins, à partir des problèmes vécus, des besoins du terrain, des connaissances disponibles et du débat collectif.</p>
+    <p class="independence-summary">Notre indépendance se traduit dans la manière d’évaluer une proposition : selon nos principes, son efficacité, son coût, sa faisabilité et ses conséquences, plutôt que son origine partisane.</p>
+    <a class="btn btn-green" href="proposer-une-idee.html">Proposer une idée</a>
   </div>
-</section>
-
-<section class="page-section" id="rencontres"><div class="container">
-  <div class="subsection-head"><span class="kicker">Sur le terrain</span><h2>Le dialogue commence par la rencontre</h2><p>Au kiosque du Jardin du Mail, le 19 septembre 2026, Angers au Cœur est allé à la rencontre des participants.</p></div>
-  <figure class="field-photo"><img src="images/rencontres/2026-09-19-mail-groupe.jpg" alt="Un groupe autour de la table Angers au Cœur au Jardin du Mail" width="1600" height="1067" loading="lazy"><figcaption>Rencontre du 19 septembre 2026 à Angers. Photographie fournie par l’association, diffusion autorisée.</figcaption></figure>
-  <div class="center-action"><a class="btn btn-outline" href="actualite-kiosque-jardin-mail-2026.html#photos">Voir les photos de cette rencontre</a></div>
+  <aside class="movement-principles" aria-labelledby="principles-title"><span class="kicker">Notre spécificité</span><h2 id="principles-title">Participation, rigueur, responsabilité</h2><div class="value-grid">
+      <article class="value"><div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Participation</h3><p>Permettre aux membres et aux habitants de faire remonter des constats, des questions et des propositions.</p></article>
+      <article class="value"><div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><h3>Rigueur</h3><p>Documenter les sujets, confronter les points de vue, mobiliser des compétences et améliorer les idées.</p></article>
+      <article class="value"><div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Responsabilité</h3><p>Assumer ensuite, au niveau politique, les positions officiellement défendues par le mouvement.</p></article>
+    </div><p class="movement-position-note">Une idée, une contribution ou un travail de pôle ne devient jamais automatiquement une position officielle d’Angers au Cœur.</p></aside>
 </div></section>
+
+
 
 <section class="page-section" id="equipe"><div class="container">
   <div class="subsection-head"><span class="kicker">L’équipe</span><h2>Les personnes qui font vivre Angers au Cœur</h2><p>Des membres engagés donnent de leur temps et de leur énergie pour faire vivre le mouvement.</p></div>
@@ -80,26 +84,16 @@
   <p class="editorial-note">Les fonctions du Bureau sont distinctes des responsabilités de communication, des fonctions dans les pôles et des droits techniques de l’espace adhérent.</p>
   <div class="center-action"><a class="btn btn-outline" href="contact.html">Apporter mon temps ou mes compétences</a></div>
 </div></section>
+<section class="page-section" id="rencontres"><div class="container">
+  <div class="subsection-head"><span class="kicker">Sur le terrain</span><h2>Le dialogue commence par la rencontre</h2><p>Au kiosque du Jardin du Mail, le 19 septembre 2026, Angers au Cœur est allé à la rencontre des participants.</p></div>
+  <figure class="field-photo"><img src="images/rencontres/2026-09-19-mail-groupe.jpg" alt="Un groupe autour de la table Angers au Cœur au Jardin du Mail" width="1600" height="1067" loading="lazy"><figcaption>Rencontre du 19 septembre 2026 à Angers. Photographie fournie par l’association, diffusion autorisée.</figcaption></figure>
+  <div class="center-action"><a class="btn btn-outline" href="actualite-kiosque-jardin-mail-2026.html#photos">Voir les photos de cette rencontre</a></div>
+</div></section>
 
-<section class="page-section">
-  <div class="container">
-    <div class="subsection-head"><span class="kicker">Notre spécificité</span><h2>Participation, rigueur, responsabilité</h2><p>Angers au Cœur n'est ni un simple collectif d'opinion, ni une plateforme où toutes les idées deviendraient automatiquement des positions publiques, ni un appareil politique fermé. Le mouvement cherche à articuler trois exigences.</p></div>
-    <div class="value-grid">
-      <article class="value"><div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Participation</h3><p>Permettre aux membres et aux habitants de faire remonter des constats, des questions et des propositions.</p></article>
-      <article class="value"><div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><h3>Rigueur</h3><p>Documenter les sujets, confronter les points de vue, mobiliser des compétences et améliorer les idées.</p></article>
-      <article class="value"><div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Responsabilité</h3><p>Assumer ensuite, au niveau politique, les positions officiellement défendues par le mouvement.</p></article>
-    </div>
-    <div class="callout" style="margin-top:26px"><strong>À retenir —</strong> une idée, une contribution ou un travail de pôle ne devient jamais automatiquement une position officielle d'Angers au Cœur.</div>
-  </div>
-</section>
+
 <section class="subsection alt" id="methode"><div class="container"><div class="subsection-head"><span class="kicker">Notre méthode</span><h2>Écouter, documenter, décider</h2><p>Les habitants apportent leurs constats et leurs idées. Les pôles confrontent les points de vue et approfondissent les sujets. Une position officielle suppose ensuite une validation politique explicite.</p></div><div class="cards3"><article class="card"><h3>Écouter</h3><p>Recueillir des questions, des expériences et des propositions, lors des rencontres ou par le formulaire public.</p></article><article class="card"><h3>Documenter</h3><p>Établir les faits, identifier qui décide, comparer les options et leurs conséquences.</p></article><article class="card"><h3>Décider</h3><p>Distinguer les travaux en cours des positions officiellement validées par le mouvement.</p></article></div><div class="center-action"><a class="btn btn-navy" href="methode.html">Comprendre notre méthode de travail</a></div></div></section>
-<section class="page-section"><div class="container"><div class="subsection-head"><span class="kicker">Participer</span><h2>Une place pour vos idées et vos compétences</h2><p>Vous pouvez proposer une idée sans adhérer, venir échanger lors d’une rencontre ou rejoindre les travaux des pôles en tant qu’adhérent.</p></div><div class="editorial-actions"><a class="btn btn-red" href="proposer-une-idee.html">Proposer une idée</a><a class="btn btn-outline" href="evenements.html">Nous rencontrer</a><a class="btn btn-outline" href="travaux.html#explorer">Découvrir les dix pôles</a></div></div></section>
-<section class="page-section">
-  <div class="container">
-    <div class="subsection-head"><span class="kicker">Indépendance</span><h2>Notre indépendance de jugement</h2></div>
-    <div class="callout">Nous ne choisissons pas une proposition selon le parti auquel elle ressemble. Nous l'évaluons selon nos principes, son efficacité, son coût, sa faisabilité et ses conséquences.</div>
-  </div>
-</section>
+<section class="page-section"><div class="container"><div class="subsection-head"><span class="kicker">Participer</span><h2>Une place pour vos idées et vos compétences</h2><p>Vous pouvez proposer une idée sans adhérer, venir échanger lors d’une rencontre ou rejoindre les travaux des pôles en tant qu’adhérent.</p></div><div class="editorial-actions"><a class="btn btn-green" href="proposer-une-idee.html">Proposer une idée</a><a class="btn btn-outline" href="evenements.html">Nous rencontrer</a><a class="btn btn-outline" href="travaux.html#explorer">Découvrir les dix pôles</a></div></div></section>
+
 </main>
 
 <section class="cta">
@@ -127,7 +121,7 @@
     <div class="footer-bottom"><span>© 2026 Angers au Cœur</span><span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="plan-du-site.html">Plan du site</a></span></div>
   </div>
 </footer>
-<script src="js/main.js?v=20261009-editorial"></script>
+<script src="js/main.js?v=20261009-visuel"></script>
 
 </body>
 </html>
