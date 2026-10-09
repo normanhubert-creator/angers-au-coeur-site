@@ -48,7 +48,13 @@ document.querySelectorAll('[data-hero-gallery]').forEach(gallery=>{
   const sync=()=>{
     clearTimeout(timer);timer=null;
     gallery.dataset.rotation=running()?'playing':'paused';
-    if(pause){pause.disabled=motion.matches;pause.textContent=motion.matches?'Animation arrêtée':userPaused?'Reprendre':'Pause';pause.setAttribute('aria-label',motion.matches?'Animation arrêtée selon votre préférence de mouvement réduit':userPaused?'Relancer le diaporama':'Mettre le diaporama en pause');}
+    if(pause){
+      const label=motion.matches?'Animation arrêtée selon votre préférence de mouvement réduit':userPaused?'Relancer le diaporama':'Mettre le diaporama en pause';
+      pause.disabled=motion.matches;
+      pause.textContent=userPaused&&!motion.matches?'▶':'Ⅱ';
+      pause.setAttribute('aria-label',label);
+      pause.title=label;
+    }
     if(running())timer=setTimeout(async()=>{await show(selected+1);sync();},3000);
   };
   pause?.addEventListener('click',()=>{userPaused=!userPaused;sync();});
