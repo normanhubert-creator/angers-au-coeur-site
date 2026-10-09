@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com https://angers-au-coeur-espace.angers-au-coeur-cloudflare-v2.workers.dev; base-uri 'self'; form-action 'self'; object-src 'none'">
+<title>Proposer une idée · Angers au Cœur</title>
+<meta name="description" content="Partagez une idée, un problème ou un projet pour Angers, sans adhérer et avec ou sans coordonnées.">
+<link rel="canonical" href="https://www.angersaucoeur.org/proposer-une-idee.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Angers au Cœur">
+<meta property="og:title" content="Proposer une idée · Angers au Cœur">
+<meta property="og:description" content="Suivez les actualités, vidéos, auditions, événements et avancées des travaux rendus publics par Angers au Cœur.">
+<meta property="og:url" content="https://www.angersaucoeur.org/proposer-une-idee.html">
+<meta property="og:image" content="https://www.angersaucoeur.org/images/logo-angers-au-coeur.png">
+<meta property="og:image:alt" content="Logo Angers au Cœur">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Proposer une idée · Angers au Cœur">
+<meta name="twitter:description" content="Suivez les actualités, vidéos, auditions, événements et avancées des travaux rendus publics par Angers au Cœur.">
+<meta name="twitter:image" content="https://www.angersaucoeur.org/images/logo-angers-au-coeur.png">
+<link rel="stylesheet" href="css/style.css?v=20261009">
+<link rel="stylesheet" href="css/participation.css">
+<script src="js/participation.js" defer></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo-wrap" href="/" aria-label="Accueil Angers au Cœur">
+      <img src="images/logo-angers-au-coeur.png" alt="Angers au Cœur">
+    </a>
+    <nav class="nav" data-nav>
+      <a href="/" >Accueil</a>
+      <a href="mouvement.html">Qui sommes-nous ?</a>
+      <a href="travaux.html">Nos pôles</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="contact.html">Nous rejoindre</a>
+      <a href="proposer-une-idee.html" class="active">Proposer une idée</a>
+      <a class="nav-member" href="https://angers-au-coeur-espace.angers-au-coeur-cloudflare-v2.workers.dev/#/login">Espace adhérent</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-outline" href="https://angers-au-coeur-espace.angers-au-coeur-cloudflare-v2.workers.dev/#/login">Espace adhérent</a>
+      <a class="btn btn-red" href="https://www.helloasso.com/beta/associations/angers-au-coeur/adhesions/adhesion-angers-au-coeur" target="_blank" rel="noopener noreferrer">Adhérer</a>
+    </div>
+    <button class="menu-btn" data-menu aria-label="Menu">☰</button>
+  </div>
+</header>
+
+
+<main>
+<section class="page-hero"><div class="container participation-intro"><h1>Une idée pour Angers ?</h1><p>Un problème à signaler, une amélioration à proposer, un projet à partager ? Vous pouvez nous écrire sans adhérer à l’association. Vous choisissez de laisser ou non vos coordonnées. Votre contribution sera examinée par l’équipe habilitée et ne sera pas publiée automatiquement.</p></div></section>
+<section class="page-section"><div class="container">
+<div id="public-message" class="form-message" role="status" aria-live="polite" tabindex="-1" hidden></div>
+<form id="public-contribution-form" class="public-form">
+<p>Les champs marqués d’un astérisque sont obligatoires. N’indiquez pas de données de santé, d’adresse privée complète ou d’informations personnelles sur d’autres personnes.</p>
+<div class="form-grid">
+<div><label for="categorie">Que souhaitez-vous partager ? *</label><select id="categorie" name="categorie" required><option value="IDEE">Une idée</option><option value="PROJET">Un projet</option><option value="PROBLEME">Un problème à signaler</option><option value="SUGGESTION">Une suggestion ou question</option></select></div>
+<div><label for="pole-suggere">Thème principal *</label><select id="pole-suggere" name="pole_suggere_code"><option value="">Je ne sais pas / transversal</option><option value="INSTITUTIONS_DEMOCRATIE">Institutions, démocratie, territoires</option><option value="JUSTICE_SECURITE_LIBERTES">Justice, sécurité, libertés</option><option value="FINANCES_PUBLIQUES">Finances publiques, fiscalité, État</option><option value="ECONOMIE_TRAVAIL_ENTREPRISES">Économie, travail, industrie, entreprises</option><option value="EDUCATION_JEUNESSE_CULTURE">Éducation, culture, jeunesse, sport</option><option value="SANTE_PROTECTION_SOCIALE">Santé, protection sociale, familles, autonomie</option><option value="LOGEMENT_MOBILITES_TERRITOIRES">Logement, aménagement, mobilités, territoires</option><option value="ECOLOGIE_ENERGIE_AGRICULTURE">Écologie, énergie, agriculture, alimentation</option><option value="SCIENCE_NUMERIQUE_IA">Science, recherche, numérique, IA, information</option><option value="EUROPE_DEFENSE_SOUVERAINETES">Europe, international, défense, souverainetés</option></select></div>
+<div class="field-full"><label for="titre">Titre *</label><input id="titre" name="titre" required maxlength="180" autocomplete="off"></div>
+<div class="field-full"><label for="constat">Quel est le problème ou votre constat ? (facultatif)</label><textarea id="constat" name="probleme_constat" maxlength="3000"></textarea></div>
+<div class="field-full"><label for="idee">Quelle idée ou solution proposez-vous ? *</label><textarea id="idee" name="idee_proposition" required maxlength="5000" aria-describedby="idea-help"></textarea><p id="idea-help" class="field-help">Décrivez votre proposition ou votre question avec vos mots (5 000 caractères maximum).</p></div>
+<div class="field-full"><label for="quartier">Lieu ou quartier concerné (facultatif)</label><input id="quartier" name="quartier" maxlength="180" placeholder="Par exemple : centre-ville, un quartier, le territoire"></div>
+</div>
+<fieldset><legend>Vos coordonnées : vous choisissez</legend><label class="check-row"><input type="radio" name="contact_mode" value="ANONYME" checked>Sans laisser mes coordonnées</label><label class="check-row"><input type="radio" name="contact_mode" value="COORDONNEES">Je souhaite laisser mes coordonnées</label></fieldset>
+<fieldset id="contact-fields" hidden disabled><legend>Coordonnées facultatives</legend><div class="form-grid"><div><label for="prenom">Prénom (facultatif)</label><input id="prenom" name="prenom" maxlength="80" autocomplete="given-name"></div><div><label for="nom">Nom (facultatif)</label><input id="nom" name="nom" maxlength="100" autocomplete="family-name"></div><div class="field-full"><label for="email">Email (facultatif)</label><input id="email" name="email" type="email" maxlength="254" autocomplete="email"></div></div><p class="field-help">Si vous donnez un email, choisissez au moins une finalité ci-dessous. Vous pouvez laisser uniquement un prénom ou un nom.</p><label class="check-row"><input type="checkbox" name="accepte_contact_contribution">J’accepte d’être recontacté par Angers au Cœur uniquement au sujet de cette contribution (nécessite un email).</label><label class="check-row"><input type="checkbox" name="accepte_actualites">J’accepte de recevoir par email les actualités, événements et communications politiques d’Angers au Cœur (nécessite un email). Cet accord est facultatif et indépendant du traitement de ma contribution.</label><p class="field-help">Votre accord est enregistré. Aucun abonnement ni envoi de newsletter n’est déclenché par ce formulaire. Vous pourrez retirer cet accord à tout moment.</p></fieldset>
+<div class="notice-public"><p>Votre envoi est conservé dans un espace privé de l’association, hébergé par Cloudflare dans l’Union européenne. Une copie est transmise à sa boîte institutionnelle Google. Seules les personnes habilitées traitent votre contribution. Elle ne crée ni compte ni demande d’adhésion et ne constitue pas une position officielle du mouvement.</p><p>Durée maximale dans la file privée : 90 jours, réduite à 30 jours après clôture et 7 jours pour un spam. L’équipe doit retirer les copies email au plus tard après 90 jours et lors d’une demande de retrait, puis elles suivent la durée de la corbeille Google. Les protections anti-abus peuvent traiter temporairement votre adresse IP ; nous ne la stockons pas en clair dans la file.</p><p>Pour le détail et vos droits : <a href="confidentialite.html#contributions-citoyennes">notice « Contributions citoyennes »</a>. Contact : <a href="mailto:angersaucoeur@gmail.com">angersaucoeur@gmail.com</a>.</p></div>
+<label class="check-row"><input type="checkbox" name="accepte_traitement" required>J’accepte expressément qu’Angers au Cœur traite cet envoi pour l’examiner, y compris s’il contient des informations susceptibles de révéler mes opinions politiques. J’ai lu la notice. Cet accord concerne uniquement ma contribution et peut être retiré. *</label>
+<div class="honeypot" aria-hidden="true"><label for="website">Laisser vide</label><input id="website" name="website" tabindex="-1" autocomplete="off" maxlength="200"></div>
+<div class="cf-turnstile" data-sitekey="0x4AAAAAAFR8uNUw4TtMstS5" data-action="public_contribution" data-theme="light" data-size="flexible" data-language="fr"></div>
+<button class="btn btn-red public-submit" type="submit">Envoyer ma contribution</button>
+<noscript><p>JavaScript est nécessaire pour transmettre ce formulaire. Vous pouvez aussi écrire à angersaucoeur@gmail.com.</p></noscript>
+</form>
+<div id="public-receipt" class="public-form" hidden><h2>Votre référence d’envoi</h2><p class="receipt-key" data-reference></p><h3>Votre clé de retrait</h3><p class="receipt-key" data-withdrawal></p><p>Copiez ces deux éléments et gardez-les pour retirer vos coordonnées, votre accord aux actualités ou l’ensemble de votre contribution. Cette clé vous appartient : ne la communiquez pas à un tiers. Aucune contribution n’est consultable publiquement avec cette référence.</p><a class="btn btn-navy" href="proposer-une-idee.html">Proposer une autre idée</a></div>
+<details class="withdraw-form"><summary>Retirer un envoi ou mes coordonnées</summary><form id="withdraw-form"><label for="withdraw-reference">Référence d’envoi</label><input id="withdraw-reference" name="reference" required maxlength="36"><label for="withdraw-key">Clé de retrait</label><input id="withdraw-key" name="withdrawal_key" required maxlength="64" autocomplete="off"><label for="withdraw-action">Que souhaitez-vous retirer ?</label><select id="withdraw-action" name="action"><option value="ACTUALITES">Mon accord aux actualités et communications</option><option value="COORDONNEES">Toutes mes coordonnées et mes accords de contact</option><option value="CONTRIBUTION">Toute ma contribution dans la file privée</option></select><p class="field-help">Le retrait dans la file privée est immédiat. Pour faire retirer aussi une copie email déjà transmise, écrivez à angersaucoeur@gmail.com en indiquant votre référence.</p><button type="submit" class="btn btn-outline">Exécuter le retrait</button><p id="withdraw-result" role="status" aria-live="polite"></p></form></details>
+</div></section></main>
+
+
+<section class="cta">
+  <div class="container">
+    <h2>Ensemble, construisons l'avenir d'Angers.</h2>
+    <p>Votre soutien et votre engagement font la différence.</p>
+    <div class="cta-buttons">
+      <a class="btn btn-red" href="https://www.helloasso.com/beta/associations/angers-au-coeur/adhesions/adhesion-angers-au-coeur" target="_blank" rel="noopener noreferrer">J'adhère</a>
+      <a class="btn btn-outline-light" href="contact.html">Je participe</a>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <img src="images/logo-angers-au-coeur.png" alt="Angers au Cœur">
+        <p>Mouvement politique indépendant. Les contenus de travail ne constituent une position officielle qu'après validation explicite.</p>
+      </div>
+      <div><strong>Navigation</strong><a href="/">Accueil</a><a href="mouvement.html">Qui sommes-nous ?</a><a href="travaux.html">Nos pôles</a><a href="actualites.html">Actualités</a></div>
+      <div><strong>Nos pôles</strong><a href="travaux.html#explorer">Découvrir les 10 pôles</a><a href="travaux.html#methode">Méthode de travail</a><a href="travaux.html#competences">Compétences extérieures</a></div>
+      <div><strong>Nous contacter</strong><a href="contact.html">Nous écrire</a><div class="social-icons"><a href="https://www.facebook.com/groups/646267025238759/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.9h2.6l.4-3.1h-3v-2c0-.9.2-1.5 1.6-1.5H16V3.3C15.7 3.2 14.7 3 13.6 3c-2.3 0-3.9 1.4-3.9 4v2.2H7v3.1h2.7V21h3.8z"/></svg></a><a href="https://www.instagram.com/angersaucoeur" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg></a><a href="https://www.linkedin.com/company/angers-au-coeur/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.9 8.65 21 11.3 21 14.2V21h-4v-6.05c0-1.44-.03-3.3-2.03-3.3-2.03 0-2.34 1.58-2.34 3.2V21H9z"/></svg></a><a href="https://whatsapp.com/channel/0029Vb9Ow82EwEjoS4wHAx0h" target="_blank" rel="noopener noreferrer" aria-label="Suivre nos actualités sur la chaîne WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a></div></div>
+      <div class="newsletter"><strong>Newsletter</strong><p>Recevoir nos actualités et prochaines rencontres.</p><input placeholder="Votre e-mail"><a class="btn btn-red" href="#" data-demo>S'inscrire</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Angers au Cœur</span><span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="plan-du-site.html">Plan du site</a></span></div>
+  </div>
+</footer>
+<script src="js/main.js?v=20261009"></script>
+
+</body>
+</html>
