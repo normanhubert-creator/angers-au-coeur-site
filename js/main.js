@@ -3,22 +3,45 @@ const menuBtn = document.querySelector('[data-menu]');
 const nav = document.querySelector('[data-nav]');
 if(menuBtn && nav) menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
 
-// Vidéo(s) à la une : vignette = première image réelle de la vidéo (miniature Drive), lecteur
-// chargé seulement au clic (pas d'iframe ni de vidéo au chargement de la page).
-document.querySelectorAll('.video-box[data-video-id]').forEach(videoBox=>{
-  const id=videoBox.getAttribute('data-video-id');
-  videoBox.style.backgroundImage='linear-gradient(0deg,rgba(4,18,34,.72),rgba(4,18,34,.08)), url(https://drive.google.com/thumbnail?id='+id+'&sz=w1000)';
+// Miniatures Drive ou YouTube ; aucun lecteur n'est chargé avant l'action du visiteur.
+document.querySelectorAll('.video-box[data-video-id], .video-box[data-youtube-id]').forEach(videoBox=>{
+  const youtubeId=videoBox.getAttribute('data-youtube-id');
+  const id=youtubeId || videoBox.getAttribute('data-video-id');
+  if(!id || !/^[A-Za-z0-9_-]+$/.test(id))return;
+  const title=videoBox.querySelector('.video-caption')?.textContent.trim() || 'Vidéo Angers au Cœur';
+  const thumbnail=youtubeId ? 'https://i.ytimg.com/vi/'+id+'/hqdefault.jpg' : 'https://drive.google.com/thumbnail?id='+id+'&sz=w1000';
+  videoBox.style.backgroundImage='linear-gradient(0deg,rgba(4,18,34,.72),rgba(4,18,34,.08)), url('+thumbnail+')';
   videoBox.style.backgroundSize='cover';
   videoBox.style.backgroundPosition='center';
-  videoBox.addEventListener('click',()=>{
+  let loaded=false;
+  const loadPlayer=event=>{
+    event.preventDefault();
+    if(loaded)return;
+    loaded=true;
     const iframe=document.createElement('iframe');
-    iframe.src='https://drive.google.com/file/d/'+id+'/preview';
-    iframe.setAttribute('allow','autoplay; fullscreen');
+    iframe.src=youtubeId ? 'https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0' : 'https://drive.google.com/file/d/'+id+'/preview';
+    iframe.title=title;
+    iframe.referrerPolicy='strict-origin-when-cross-origin';
+    iframe.setAttribute('allow','autoplay; encrypted-media; picture-in-picture; fullscreen');
     iframe.allowFullscreen=true;
     iframe.loading='lazy';
     iframe.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0';
+    videoBox.removeAttribute('role');
+    videoBox.removeAttribute('tabindex');
+    videoBox.removeAttribute('aria-label');
+    if(videoBox.tagName==='A')videoBox.removeAttribute('href');
     videoBox.replaceChildren(iframe);
-  },{once:true});
+    iframe.focus();
+  };
+  videoBox.addEventListener('click',loadPlayer);
+  if(videoBox.tagName!=='A'){
+    videoBox.setAttribute('role','button');
+    videoBox.setAttribute('tabindex','0');
+    videoBox.setAttribute('aria-label','Lire la vidéo : '+title);
+  }
+  videoBox.addEventListener('keydown',event=>{
+    if(event.target===videoBox && (event.key==='Enter' || event.key===' '))loadPlayer(event);
+  });
 });
 
 const demoIdeas = [
