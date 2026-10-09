@@ -11,7 +11,9 @@ Site public statique publié sur GitHub Pages : https://www.angersaucoeur.org/
 - Revue Au Cœur, numéro 1 : version web actualisée le 9 octobre 2026 et PDF téléchargeable.
 - Formulaire public « Proposer une idée », indépendant de l’adhésion.
 
-La revue originale n’est pas publiée : la version web corrige les anciens rendez-vous et distingue les illustrations des faits. Une présentation HTML accompagne le PDF pour la lecture sur téléphone.
+La version web conserve la maquette, l’édito et les développements de la revue. Les corrections sont ciblées : prénoms seuls pour l’équipe, photographies documentaires autorisées, illustrations distinguées des faits, projet de plaquette sans fausse disponibilité et agenda actualisé. Une présentation HTML accompagne le PDF pour la lecture sur téléphone.
+
+Trois photographies de la rencontre du 19 septembre au Jardin du Mail, fournies dans le dossier Photos AAC, sont publiées avec confirmation des autorisations. Les pixels ne sont pas retouchés ; les métadonnées EXIF/XMP/IPTC/commentaires sont retirées des copies publiques. Les originaux sont conservés.
 
 ## Confidentialité et périmètre
 

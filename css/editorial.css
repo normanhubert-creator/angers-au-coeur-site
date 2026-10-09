@@ -15,14 +15,17 @@
 .editorial-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .text-link{display:inline-block;margin-top:10px;color:var(--navy);font-weight:750;text-decoration:underline;text-underline-offset:3px}
 .team-heading{margin-top:30px;color:var(--navy)}
-.team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:1100px;margin:auto}
-.team-grid-small{grid-template-columns:repeat(2,minmax(0,1fr));max-width:720px}
+.team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:780px;margin:auto}
+.team-grid-small{grid-template-columns:repeat(2,minmax(0,1fr));max-width:510px}
 .team-card{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#f5f8fb}
-.team-card img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center top}
+.team-card img{display:block;width:180px;max-width:calc(100% - 32px);height:auto;object-fit:contain;margin:16px auto 0;border-radius:6px}
 .team-card>div{padding:18px;text-align:center}
-.team-card h3{font-size:1.1rem;margin:0;color:var(--navy)}
-.team-card p{margin:6px 0 0;color:#315576}
+.team-card h3{font-size:1.05rem;margin:0;color:var(--navy)}
+.team-card p{font-size:.95rem;margin:6px 0 0;color:#315576}
 .editorial-note,.video-information{font-size:.9rem;color:#45556a;max-width:900px;margin:24px auto}
+.field-photo{max-width:960px;margin:32px auto}.field-photo img{display:block;width:100%;height:auto;border-radius:8px}.field-photo figcaption,.photo-gallery figcaption{font-size:.9rem;color:#45556a;margin-top:10px;line-height:1.5}
+.photo-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin:24px 0}.photo-gallery figure{margin:0}.photo-gallery img{display:block;width:100%;height:auto;border-radius:8px}.photo-gallery a:focus-visible{outline:3px solid var(--red);outline-offset:4px}
+@media(max-width:760px){.photo-gallery{grid-template-columns:1fr}}
 .video-information a,.faq a{text-decoration:underline;text-underline-offset:3px}
 .faq{max-width:960px}.faq details{padding:20px 0;border-bottom:1px solid var(--line)}
 .faq summary{cursor:pointer;font-weight:750;color:var(--navy)}
