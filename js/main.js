@@ -9,30 +9,68 @@ if(menuBtn && nav){
   document.addEventListener('keydown',event=>{if(event.key==='Escape'){nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}});
 }
 
-// Diaporama manuel : aucun défilement automatique, navigation au clavier possible.
+// Crédits discrets : survol, clic tactile et clavier ; le HTML natif reste utilisable sans JS.
+document.querySelectorAll('.photo-credit').forEach(details=>{
+  const summary=details.querySelector('summary');
+  let pinned=false,dismissed=false;
+  details.addEventListener('mouseenter',()=>{dismissed=false;details.open=true;});
+  details.addEventListener('mouseleave',()=>{dismissed=false;if(!pinned&&!details.contains(document.activeElement))details.open=false;});
+  details.addEventListener('focusin',()=>{if(!dismissed)details.open=true;});
+  details.addEventListener('focusout',event=>{if(!details.contains(event.relatedTarget)&&!pinned)details.open=false;dismissed=false;});
+  summary.addEventListener('click',event=>{event.preventDefault();pinned=!pinned;dismissed=!pinned;details.open=pinned;});
+  details.addEventListener('keydown',event=>{
+    if(event.key==='Escape'){event.preventDefault();pinned=false;dismissed=true;details.open=false;summary.focus();}
+  });
+  document.addEventListener('click',event=>{if(!details.contains(event.target)){pinned=false;details.open=false;}});
+});
+
+// Fond photographique toutes les trois secondes ; pause et préférences d'accessibilité.
 document.querySelectorAll('[data-hero-gallery]').forEach(gallery=>{
   const slides=[...gallery.querySelectorAll('[data-hero-slide]')];
   const dots=[...gallery.querySelectorAll('[data-hero-go]')];
   const status=gallery.querySelector('[data-hero-status]');
+  const pause=gallery.querySelector('[data-hero-pause]');
+  const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
   if(slides.length<2)return;
-  let selected=0;
-  const show=index=>{
-    selected=(index+slides.length)%slides.length;
-    slides.forEach((slide,n)=>{slide.hidden=n!==selected;});
+  let selected=0,timer=null,userPaused=motion.matches,hovered=false,focused=false,inView=true,request=0;
+  const running=()=>!userPaused&&!motion.matches&&!hovered&&!focused&&!document.hidden&&inView;
+  const show=async(index,manual=false)=>{
+    const serial=++request,next=(index+slides.length)%slides.length;
+    const photo=slides[next].querySelector('img');
+    try{await photo.decode();}catch{return;}
+    if(serial!==request||(!manual&&!running()))return;
+    selected=next;
+    slides.forEach((slide,n)=>slide.classList.toggle('is-current',n===selected));
     dots.forEach((dot,n)=>dot.setAttribute('aria-current',String(n===selected)));
-    if(status)status.textContent='Photo '+(selected+1)+' sur '+slides.length;
+    gallery.querySelectorAll('[data-slide-credit]').forEach(credit=>{credit.hidden=Number(credit.dataset.slideCredit)!==selected;});
+    if(status){status.setAttribute('aria-live',manual?'polite':'off');status.textContent='Photo '+(selected+1)+' sur '+slides.length;}
   };
-  gallery.querySelector('[data-hero-prev]')?.addEventListener('click',()=>show(selected-1));
-  gallery.querySelector('[data-hero-next]')?.addEventListener('click',()=>show(selected+1));
-  dots.forEach((dot,n)=>dot.addEventListener('click',()=>show(n)));
+  const sync=()=>{
+    clearTimeout(timer);timer=null;
+    gallery.dataset.rotation=running()?'playing':'paused';
+    if(pause){pause.disabled=motion.matches;pause.textContent=motion.matches?'Animation arrêtée':userPaused?'Reprendre':'Pause';pause.setAttribute('aria-label',motion.matches?'Animation arrêtée selon votre préférence de mouvement réduit':userPaused?'Relancer le diaporama':'Mettre le diaporama en pause');}
+    if(running())timer=setTimeout(async()=>{await show(selected+1);sync();},3000);
+  };
+  pause?.addEventListener('click',()=>{userPaused=!userPaused;sync();});
+  gallery.querySelector('[data-hero-prev]')?.addEventListener('click',()=>show(selected-1,true));
+  gallery.querySelector('[data-hero-next]')?.addEventListener('click',()=>show(selected+1,true));
+  dots.forEach((dot,n)=>dot.addEventListener('click',()=>show(n,true)));
   gallery.addEventListener('keydown',event=>{
     if(event.target.tagName!=='BUTTON')return;
     if(event.key==='ArrowLeft'||event.key==='ArrowRight'){
-      event.preventDefault();show(selected+(event.key==='ArrowRight'?1:-1));
+      event.preventDefault();show(selected+(event.key==='ArrowRight'?1:-1),true);
     }
   });
+  gallery.addEventListener('mouseenter',()=>{hovered=true;sync();});
+  gallery.addEventListener('mouseleave',()=>{hovered=false;sync();});
+  gallery.addEventListener('focusin',()=>{focused=true;sync();});
+  gallery.addEventListener('focusout',event=>{focused=gallery.contains(event.relatedTarget);sync();});
+  document.addEventListener('visibilitychange',sync);
+  motion.addEventListener('change',()=>{if(motion.matches)userPaused=true;sync();});
+  if('IntersectionObserver' in window)new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;sync();},{threshold:0}).observe(gallery);
   const controls=gallery.querySelector('[data-hero-controls]');
   if(controls)controls.hidden=false;
+  sync();
 });
 
 // Miniatures Drive ou YouTube ; aucun lecteur n'est chargé avant l'action du visiteur.
