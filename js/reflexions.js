@@ -1,7 +1,13 @@
 (() => {
   'use strict';
-  const url = 'https://www.angersaucoeur.org/reflexion-immobilier-habitat-angers.html';
-  const title = 'Immobilier et habitat : quel avenir pour Angers ?';
+  const canonical = document.querySelector('link[rel="canonical"]')?.href;
+  const allowed = new Set([
+    'https://www.angersaucoeur.org/reflexion-immobilier-habitat-angers.html',
+    'https://www.angersaucoeur.org/reflexion-ia-numerique-angers.html'
+  ]);
+  if (!allowed.has(canonical)) return;
+  const url = canonical;
+  const title = document.querySelector('meta[property="og:title"]')?.content || 'Les réflexions des pôles · Angers au Cœur';
   const status = document.querySelector('[data-debate-share-status]');
   const copy = document.querySelector('[data-copy-debate]');
   const share = document.querySelector('[data-share-debate]');

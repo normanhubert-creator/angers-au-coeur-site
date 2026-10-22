@@ -85,4 +85,39 @@
 .contribution-context a{text-decoration:underline;text-underline-offset:3px;color:#174e31}
 @media(max-width:1050px){.debate-hero-grid{gap:28px;grid-template-columns:1.2fr 1fr}.debate-hero h1{font-size:2.7rem}.debate-affiliation>.container{display:block}.debate-crosslinks{max-width:none;margin-top:12px!important}.debate-feature{gap:28px}.debate-participate-grid{gap:32px}}
 @media(max-width:760px){.debate-hero{padding-top:24px}.debate-hero-grid{grid-template-columns:1fr;gap:6px}.debate-hero-copy{padding-bottom:20px}.debate-breadcrumb{margin-bottom:20px}.debate-hero h1{font-size:2.5rem}.debate-question{font-size:1.03rem}.debate-illustration img{max-height:300px;object-fit:cover;object-position:center 65%}.debate-illustration figcaption{font-size:.65rem}.debate-affiliation{padding:22px 0}.debate-affiliation a{line-height:1.7}.debate-topic-grid,.debate-method-grid,.debate-participate-grid,.debate-feature{grid-template-columns:1fr}.debate-topic{padding:24px}.debate-topic h3{font-size:1.3rem}.debate-topic-nav{gap:8px}.debate-topic-nav a{font-size:.78rem;padding:10px}.debate-feature-section{padding:32px 0}.debate-feature{gap:24px}.debate-feature figure{max-width:450px;width:100%}.debate-feature img{max-height:230px;object-fit:cover;object-position:center 65%}.debate-feature .btn,.debate-actions .btn{padding:10px 14px;line-height:1.5;text-align:center}.debate-participate-grid{gap:18px}.debate-method-grid{gap:22px}.debate-opening,.debate-topics,.debate-method,.debate-participate,.debate-share{padding-block:40px}.debate-topic-grid{gap:16px}.hero-topic-link{max-width:100%}}
+.debate-hub{max-width:1240px}
+.debate-dossier-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.debate-dossier-card{background:white;border:1px solid #d9e1dc;border-radius:7px;overflow:hidden;display:flex;flex-direction:column}
+.debate-card-photo{margin:0;position:relative}
+.debate-card-photo img{width:100%;height:260px;object-fit:cover;object-position:center 55%}
+.debate-card-campus img{object-position:center 78%}
+.debate-card-photo>.photo-credit{position:absolute;right:10px;bottom:10px}
+.debate-card-photo .photo-credit-panel{top:calc(100% - 1px);bottom:auto}
+.debate-dossier-copy{padding:26px;display:flex;flex-direction:column;flex:1}
+.debate-dossier-copy h3{color:var(--navy);font-size:1.65rem;line-height:1.2;margin:18px 0 12px}
+.debate-dossier-copy>p{line-height:1.75;color:#3e5263}
+.debate-dossier-copy .debate-feature-pole{font-size:.8rem}
+.debate-dossier-copy .debate-actions{margin-top:auto;padding-top:14px}
+.debate-photo{position:relative}
+.debate-photo img{height:400px;object-fit:cover;object-position:center 55%}
+.debate-photo-campus img{object-position:center 78%}
+.debate-photo>.photo-credit{position:absolute;right:10px;top:12px}
+.debate-photo .photo-credit-panel{top:calc(100% - 1px);bottom:auto}
+.debate-reading .debate-editorial-note{font-size:.85rem;line-height:1.7;color:#46596a;border-top:1px solid #dae3e9;padding-top:20px}
+.debate-evidence{background:#f7f8f8;border-block:1px solid #e3e8e6}
+.debate-evidence>.container,.debate-related>.container{max-width:1240px}
+.debate-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.debate-evidence-grid article{padding:26px;background:white;border-left:3px solid #526f83}
+.debate-evidence-type{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;font-weight:800;color:#3c617b}
+.debate-evidence-grid h3{color:var(--navy);font-size:1.25rem}
+.debate-evidence-grid p{line-height:1.8;color:#405565}
+.debate-evidence-grid a{display:block;margin-top:12px;font-size:.8rem;line-height:1.6;text-decoration:underline;text-underline-offset:3px;color:#174e31;overflow-wrap:anywhere}
+.debate-source-date,.debate-license{font-size:.78rem;line-height:1.7;color:#516171}
+.debate-source-date{margin-top:24px}
+.debate-glossary dt{font-weight:800;margin-top:20px;color:var(--navy)}
+.debate-glossary dd{margin:8px 0;line-height:1.8}
+.debate-related{padding-block:36px}
+.debate-related h2{font-size:1.45rem;color:var(--navy)}
+@media(max-width:760px){.debate-dossier-grid,.debate-evidence-grid{grid-template-columns:1fr;gap:22px}.debate-card-photo img{height:230px}.debate-dossier-copy{padding:22px}.debate-dossier-copy h3{font-size:1.5rem}.debate-photo img{height:290px;max-height:none}.debate-evidence{padding-block:40px}.debate-evidence-grid article{padding:22px}.debate-dossier-copy .btn{padding:10px 12px;line-height:1.5;text-align:center}}
+@media(max-width:760px){.debate-hero .debate-ia-title{font-size:2.25rem;text-wrap:balance}.debate-ia-title br{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
