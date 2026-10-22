@@ -19,6 +19,12 @@ L’accueil associe un texte fixe à trois photographies plein bandeau, avec fon
 
 Les crédits photographiques sont conservés dans le HTML sous un petit accès « ⓘ », disponible au survol, au clic et au clavier, y compris au clic sans JavaScript. Auteurs, licences et indications de cadrage/filtre restent accessibles. Les légendes de contexte et les avertissements concernant les personnes photographiées restent visibles.
 
+## Réflexions des pôles
+
+Le dossier « Immobilier et habitat : quel avenir pour Angers ? », publié le 22 octobre 2026, est accessible depuis l’accueil, les actualités et le pôle 07. Il présente six questions ouvertes, sans les assimiler à un programme ou à une position adoptée. Les liens vers les pôles 03, 04, 05 et 07 sélectionnent le bon panneau. Chaque question mène au formulaire privé existant, avec titre et pôle préremplis à partir d’une liste fermée. Aucun consentement, contact ou texte de contribution n’est prérempli. Le traitement des envois et le backend restent inchangés.
+
+L’illustration des logements est un dessin original, non la représentation d’un projet réel. Un visuel PNG 1200 × 630 est téléchargeable et déclaré dans les métadonnées de partage ; les boutons de copie/partage n’apparaissent que si leur fonction est disponible. Aucun réseau social n’est contacté automatiquement. Le seul repère documentaire supplémentaire concerne le bail réel solidaire, avec lien vers BoRiS, service du ministère chargé du logement.
+
 ## Confidentialité et périmètre
 
 Le dépôt ne contient pas le backend, les bases, les contributions privées, les comptes, les mots de passe ou les secrets. Les portraits et fonctions ont été autorisés par le responsable du site.

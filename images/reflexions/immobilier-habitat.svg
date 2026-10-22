@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" viewBox="0 0 960 720" role="img" aria-labelledby="title desc">
+<title id="title">Habiter la ville, imaginer son avenir</title><desc id="desc">Illustration de maisons aux toits d’ardoise, d’un immeuble, d’un commerce, d’arbres et d’un jardin. Ce dessin ne représente pas un projet immobilier réel.</desc>
+<defs><pattern id="windows" x="0" y="0" width="62" height="68" patternUnits="userSpaceOnUse"><rect x="18" y="14" width="24" height="36" rx="1" fill="#1b3a50"/><path d="M30 14v36M18 30h24" stroke="#f3ead8" stroke-width="3"/></pattern></defs>
+<path fill="#ece9df" d="M0 0h960v720H0z"/><circle cx="759" cy="143" r="76" fill="#e8b28f"/><path d="M53 267c95-93 152-107 233-73s129 12 179-34 136-33 189 1" fill="none" stroke="#d8dfd8" stroke-width="2"/>
+<path d="M0 584c166-37 258-17 390-10 190 10 304-15 570-35v181H0z" fill="#c4d3c6"/>
+<g stroke="#17364b" stroke-width="3" stroke-linejoin="round">
+<path d="M105 306h184v286H105z" fill="#f9f4e9"/><path d="m85 306 112-118 112 118z" fill="#344858"/><path d="M176 225v-47h28v76" fill="#344858"/><path d="M127 329h138v193H127z" fill="url(#windows)" stroke="none"/><path d="M171 527h51v65h-51z" fill="#b6664d"/><path d="M194 538v43" stroke="#f2d9c4"/>
+<path d="M314 377h174v214H314z" fill="#ead8c1"/><path d="m298 377 103-96 103 96z" fill="#344858"/><path d="M339 397h126v94H339z" fill="url(#windows)" stroke="none"/><path d="M334 516h133v75H334z" fill="#2d6555"/><path d="M327 510h148l-9-25H336z" fill="#b6664d"/><path d="M396 516v75M336 551h58M406 551h59" stroke="#ead8c1"/><path d="M336 600h133" stroke="#17364b"/>
+<path d="M511 243h196v348H511z" fill="#f5efe2"/><path d="M500 229h218v22H500z" fill="#344858"/><path d="M533 269h154v269H533z" fill="url(#windows)" stroke="none"/><path d="M540 335h139M540 404h139M540 473h139" stroke-width="8"/><path d="M590 549h42v42h-42z" fill="#b6664d"/>
+<path d="M740 391h133v200H740z" fill="#d5ddda"/><path d="m724 391 81-86 84 86z" fill="#344858"/><path d="M760 411h96v112h-96z" fill="url(#windows)" stroke="none"/><path d="M786 544h38v47h-38z" fill="#2d6555"/>
+</g>
+<path d="M46 599h867M0 652h960" stroke="#17364b" stroke-width="3"/><path d="M92 632h66m34 0h66m34 0h66m34 0h66m34 0h66m34 0h66m34 0h66m34 0h66" stroke="#f9f4e9" stroke-width="4"/>
+<g fill="#2d6555"><path d="M44 586v-82" stroke="#17364b" stroke-width="4"/><ellipse cx="44" cy="487" rx="32" ry="53"/><path d="M915 584V462" stroke="#17364b" stroke-width="4"/><ellipse cx="915" cy="454" rx="36" ry="66"/><path d="M719 591v-53" stroke="#17364b" stroke-width="3"/><ellipse cx="718" cy="524" rx="18" ry="29"/></g>
+<g fill="#17364b" font-family="Arial,sans-serif"><text x="52" y="85" font-size="14" letter-spacing="4">CONSTRUIRE · RÉNOVER · HABITER</text><text x="52" y="691" font-size="13" letter-spacing="2">UNE VILLE À PENSER ENSEMBLE</text></g></svg>
