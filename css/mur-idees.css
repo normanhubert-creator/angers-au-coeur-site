@@ -3,3 +3,4 @@
 @media(max-width:650px){.wall-section{padding:46px 0}.wall-grid{grid-template-columns:1fr;gap:30px;padding-left:5px;padding-right:5px}.idea-note{min-height:0;padding:34px 24px 24px}.wall-filters{display:grid;grid-template-columns:1fr;gap:14px}.wall-filters select{width:100%;min-width:0}.wall-heading h2{font-size:1.85rem}.wall-controls{justify-content:center}.wall-heading .btn{white-space:normal;text-align:center}}
 @media(prefers-reduced-motion:reduce){.idea-note{transform:none!important}}
 .wall-section [hidden]{display:none!important}
+.wall-hero{background-position:center 22%!important}.wall-hero .kicker{color:#dbe9e6}.idea-note{--ink:#75570f}.note-1{--ink:#24594d}.note-2{--ink:#844026}.note-3{--ink:#365779}
