@@ -20,7 +20,7 @@ for(const wall of document.querySelectorAll('[data-idea-wall]')){
  const text=el('span','', 'wall-position'),pause=el('button',paused?'Lecture':'Pause'),previous=el('button','←'),next=el('button','→');for(const b of[pause,previous,next])b.type='button';previous.setAttribute('aria-label','Post-it précédents');next.setAttribute('aria-label','Post-it suivants');
  if(controls)controls.append(pause,previous,text,next);
  function selected(){return items.filter(x=>!kind?.value||x.type===kind.value);}
- function render(){const all=selected(),limit=compact?3:all.length;offset=all.length?offset%all.length:0;const shown=compact?all.slice(offset,offset+limit):all;grid.replaceChildren(...shown.map(card));
+ function render(){const all=selected(),limit=compact?Math.min(3,all.length):all.length;offset=all.length?offset%all.length:0;const shown=compact?[...all.slice(offset,offset+limit),...all.slice(0,Math.max(0,offset+limit-all.length))]:all;grid.replaceChildren(...shown.map(card));
   message.textContent=all.length?'':kind?.value?'Aucun post-it de cette nature pour ce pôle.':'Le mur accueillera les contributions relues et les synthèses des pôles. Vous pouvez déjà proposer une idée.';
   if(controls){controls.hidden=all.length<=3;text.textContent=all.length?Math.floor(offset/3)+1+' / '+Math.ceil(all.length/3):'';pause.textContent=paused?'Lecture':'Pause';pause.setAttribute('aria-label',paused?'Démarrer la rotation des post-it':'Mettre la rotation des post-it en pause');}
   if(more)more.hidden=!hasMore;
